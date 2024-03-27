@@ -1,2 +1,2 @@
 # endtoend-nlp-project
-end to end NLP project with Python
+End-to-End NLP sentiment analyzer project with Python and Streamlit
