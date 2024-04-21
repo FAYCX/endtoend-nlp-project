@@ -6,7 +6,6 @@ cryptography==42.0.5
 Cython==3.0.10
 dl==0.1.0
 docutils==0.18.1
-docutils==0.18.1
 filelock==3.13.4
 HTMLParser==0.0.2
 ipython==8.12.3
