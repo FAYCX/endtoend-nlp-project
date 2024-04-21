@@ -9,9 +9,9 @@ catalogue==2.0.10
 certifi==2024.2.2
 charset-normalizer==3.3.2
 click==8.1.7
-cloudpathlib==0.18.1
+cloudpathlib>=0.7.0,<0.17.0
 colorclass==2.2.2
-confection==0.1.4
+confection>=0.0.4,<0.1.0
 contourpy==1.2.1
 cycler==0.12.1
 cymem==2.0.8
@@ -110,7 +110,7 @@ traitlets==5.14.3
 transformers==4.40.0
 trio==0.25.0
 trio-websocket==0.11.1
-typer==0.9.4
+typer>=0.3.0,<0.8.0
 typing_extensions==4.11.0
 tzdata==2024.1
 urllib3==2.2.1
