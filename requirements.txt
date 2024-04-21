@@ -116,7 +116,7 @@ tzdata==2024.1
 urllib3==2.2.1
 wasabi==1.1.2
 wcwidth==0.2.13
-weasel==0.4.0
+weasel>=0.1.0,<0.4.0
 webdriver-manager==4.0.1
 wrapt==1.16.0
 wsproto==1.2.0
