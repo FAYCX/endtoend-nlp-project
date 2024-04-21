@@ -40,50 +40,105 @@ alt.themes.enable("dark")
 
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
-font_css = """
+white_color = "#fff"
+h1 = "1.9rem"
+h2 = "1.6rem" 
+h3 = "1.2rem" 
+p = "1rem"
+
+font_css = f"""
 <style>
-    h1 {
+    /* Base styles */
+    body {{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }}
+
+    .title-box {{
+        padding: 10px;
+        margin: 10px;
+        background-color: #333;  /* Dark background for the title box */
+        color: {white_color};
+        border-radius: 10px;
+        box-shadow: 0.4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease-in-out;
+    }}
+
+    h1 {{
         font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        font-size: 32px;
+        font-size: {h1};
         font-weight: bold;
         font-stretch: condensed;
-    }
+        margin: 0;
+        letter-spacing: 0.08rem;
+    }}
 
-    h2 {
+     h2 {{
         font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        font-size: 26px;
+        font-size: {h2};
         font-weight: bold;
         font-stretch: condensed;
-        color:#fff;
-        letter-spacing: 1px;
-    }
+        letter-spacing: 0.02rem;
+    }}
 
-    h3 {
+    h3 {{
         font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        font-size: 18px;
+        font-size: {h3};
         font-weight: bold;
         font-stretch: condensed;
-        color:#fff;
-        letter-spacing: 1px;
-    }
+        letter-spacing: 0.01rem;
+        color: #edcce8;
+    }}
 
-
-    h5 {
+    h5, p {{
         font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        color:#85888c;
-        #font-weight: bold;
-        #font-stretch: condensed;
-    }
+        color: #85888c;
+        font-size: {p};
+    }}
 
-    p {
+    /* Adjustments for smaller screens */
+    @media (max-width: 480px) {{
+        .title-box {{
+            padding: 10px;
+            margin: 10px;
+        }}
+
+        h1 {{
+            font-size: 1.4rem;
+        }}
+
+   
+    }}
+
+    h2 {{
         font-family: 'Helvetica Neue', Arial, sans-serif !important;
-        color:#dbdbdb;
-        #font-weight: bold;
-        #font-stretch: condensed;
-        font-size:18px;
-    }
+        font-size: {h2};
+        font-weight: bold;
+        font-stretch: condensed;
+        letter-spacing: 0.02rem;
+    }}
+
+    h3 {{
+        font-family: 'Helvetica Neue', Arial, sans-serif !important;
+        font-size: {h3};
+        font-weight: bold;
+        font-stretch: condensed;
+        letter-spacing: 0.01rem;
+        
+    }}
+
+    h5, p {{
+        font-family: 'Helvetica Neue', Arial, sans-serif !important;
+        color: #dbdbdb;
+        font-size: {p};
+    }}
 </style>
 """
+
 st.markdown(font_css, unsafe_allow_html=True)
 
 
@@ -100,10 +155,21 @@ logo_html = f"""
 <style>
 #logo {{
     position: absolute;
-    top: 19px;
+    top: 1vw;
     right:0;
+    height:5w;
+    max-height:150px;
+    width:auto;
     z-index: 999;
     transition: top 0.3s;
+}}
+
+@media (max-width:768px){{
+    #logo {{
+    top: 0.5vw;
+    height:8vw;
+
+    }}
 }}
 </style>
 <img id="logo" src="data:image/png;base64,{logo_base64}" alt="App logo" style="height: 150px; width: auto;">
@@ -192,6 +258,7 @@ def main():
         net_choice = st.sidebar.selectbox("Choose dataset", net)
 
         if choice == "Social Network Visualization" and net_choice == "Pride and Prejudice":
+            st.title("<Pride and Prejudice> Social Architecture")
 
             social_network()
 

@@ -39,27 +39,11 @@ html_content = f"""
             padding: 0;
             margin: 0;
         }}
-
-
-        h1 {{
-            position: absolute;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 1.5px;
-            left: 50px;
-            top: 0px;
-            font-color: white;
-            font-size: 30px;
-            z-index:10;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-weight: bold;
-            font-stretch:condensed; 
-
-        }}
+        
     </style>
 </head>
 <body>
-<h1 style="color: #fff;">&lt;Pride and Prejudice&gt; Network Architecture</h1>
+
 <div id="mynetwork"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {{
@@ -97,9 +81,9 @@ html_content = f"""
 </html>
 """
 
+
 # Function to display the HTML in Streamlit
 def social_network():
-    #st.subheader("<Pride and Prejudice> Network")
     st.components.v1.html(html_content, height=800, scrolling=True)
 
 social_network()
