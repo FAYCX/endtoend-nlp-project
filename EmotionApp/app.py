@@ -1,3 +1,14 @@
+import sys
+import subprocess
+
+# Print Python executable path
+print("Python executable:", sys.executable)
+
+# List installed packages
+subprocess.run(["pip", "list"])
+
+
+
 import streamlit as st
 
 st.set_page_config(
