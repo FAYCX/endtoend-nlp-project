@@ -1,13 +1,26 @@
+# macOS system files
 .DS_Store
+
+# Python environments
 new-env/
-EmotionApp/myenv/
-node_modules/
-.DS_Store
-.ipynb_checkpoints/
-__pycache__/
-.streamlit/
 .venv/
 venv/
-
-eval*
 myenv/
+
+# Node modules
+node_modules/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python bytecode
+__pycache__/
+
+# Streamlit files
+.streamlit/
+
+# Evaluation files (be more specific if possible)
+eval*
+
+# Application-specific folders
+EmotionApp/myenv/
