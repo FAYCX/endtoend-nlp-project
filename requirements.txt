@@ -58,7 +58,7 @@ pillow==10.3.0
 pip-upgrader==1.4.15
 preshed==3.0.9
 prompt-toolkit==3.0.43
-protobuf==5.26.1
+protobuf>=3.20,<5
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pyarrow==16.0.0
