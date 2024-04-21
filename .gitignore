@@ -6,6 +6,7 @@ new-env/
 .venv/
 venv/
 myenv/
+venv_test/
 
 # Node modules
 node_modules/
