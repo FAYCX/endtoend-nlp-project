@@ -1,0 +1,311 @@
+{
+  "nodes": [
+    {
+      "id": "Alice",
+      "label": "Alice",
+      "color": "#e6b1deCC",
+      "value": 270
+    },
+    {
+      "id": "Rabbit",
+      "label": "Rabbit",
+      "color": "#b89706CC",
+      "value": 30
+    },
+    {
+      "id": "Mouse",
+      "label": "Mouse",
+      "color": "#13870bCC",
+      "value": 60
+    },
+    {
+      "id": "Lory",
+      "label": "Lory",
+      "color": "#9c051eCC",
+      "value": 45
+    },
+    {
+      "id": "Eaglet",
+      "label": "Eaglet",
+      "color": "#b89706CC",
+      "value": 45
+    },
+    {
+      "id": "Dodo",
+      "label": "Dodo",
+      "color": "#d9d0d2CC",
+      "value": 45
+    },
+    {
+      "id": "Bill",
+      "label": "Bill",
+      "color": "#e6b1deCC",
+      "value": 30
+    },
+    {
+      "id": "Caterpillar",
+      "label": "Caterpillar",
+      "color": "#b89706CC",
+      "value": 30
+    },
+    {
+      "id": "Pigeon",
+      "label": "Pigeon",
+      "color": "#13870bCC",
+      "value": 15
+    },
+    {
+      "id": "Queen",
+      "label": "Queen",
+      "color": "#9c051eCC",
+      "value": 135
+    },
+    {
+      "id": "Footman",
+      "label": "Footman",
+      "color": "#b89706CC",
+      "value": 15
+    },
+    {
+      "id": "Duchess",
+      "label": "Duchess",
+      "color": "#d9d0d2CC",
+      "value": 15
+    },
+    {
+      "id": "Cat",
+      "label": "Cat",
+      "color": "#e6b1deCC",
+      "value": 30
+    },
+    {
+      "id": "Hatter",
+      "label": "Hatter",
+      "color": "#b89706CC",
+      "value": 60
+    },
+    {
+      "id": "Dormouse",
+      "label": "Dormouse",
+      "color": "#13870bCC",
+      "value": 45
+    },
+    {
+      "id": "Five",
+      "label": "Five",
+      "color": "#9c051eCC",
+      "value": 45
+    },
+    {
+      "id": "Seven",
+      "label": "Seven",
+      "color": "#b89706CC",
+      "value": 45
+    },
+    {
+      "id": "Two",
+      "label": "Two",
+      "color": "#d9d0d2CC",
+      "value": 45
+    },
+    {
+      "id": "Gryphon",
+      "label": "Gryphon",
+      "color": "#e6b1deCC",
+      "value": 75
+    },
+    {
+      "id": "Turtle",
+      "label": "Turtle",
+      "color": "#b89706CC",
+      "value": 30
+    }
+  ],
+  "edges": [
+    {
+      "from": "Alice",
+      "to": "Rabbit",
+      "value": 48
+    },
+    {
+      "from": "Alice",
+      "to": "Mouse",
+      "value": 136
+    },
+    {
+      "from": "Alice",
+      "to": "Lory",
+      "value": 33
+    },
+    {
+      "from": "Alice",
+      "to": "Eaglet",
+      "value": 7
+    },
+    {
+      "from": "Alice",
+      "to": "Dodo",
+      "value": 30
+    },
+    {
+      "from": "Alice",
+      "to": "Bill",
+      "value": 27
+    },
+    {
+      "from": "Alice",
+      "to": "Caterpillar",
+      "value": 202
+    },
+    {
+      "from": "Alice",
+      "to": "Pigeon",
+      "value": 77
+    },
+    {
+      "from": "Alice",
+      "to": "Queen",
+      "value": 251
+    },
+    {
+      "from": "Alice",
+      "to": "Footman",
+      "value": 44
+    },
+    {
+      "from": "Alice",
+      "to": "Duchess",
+      "value": 45
+    },
+    {
+      "from": "Alice",
+      "to": "Cat",
+      "value": 76
+    },
+    {
+      "from": "Alice",
+      "to": "Hatter",
+      "value": 243
+    },
+    {
+      "from": "Alice",
+      "to": "Dormouse",
+      "value": 141
+    },
+    {
+      "from": "Alice",
+      "to": "Five",
+      "value": 16
+    },
+    {
+      "from": "Alice",
+      "to": "Seven",
+      "value": 6
+    },
+    {
+      "from": "Alice",
+      "to": "Gryphon",
+      "value": 254
+    },
+    {
+      "from": "Alice",
+      "to": "Turtle",
+      "value": 13
+    },
+    {
+      "from": "Rabbit",
+      "to": "Queen",
+      "value": 5
+    },
+    {
+      "from": "Mouse",
+      "to": "Lory",
+      "value": 25
+    },
+    {
+      "from": "Mouse",
+      "to": "Dodo",
+      "value": 5
+    },
+    {
+      "from": "Mouse",
+      "to": "Queen",
+      "value": 6
+    },
+    {
+      "from": "Lory",
+      "to": "Eaglet",
+      "value": 6
+    },
+    {
+      "from": "Eaglet",
+      "to": "Dodo",
+      "value": 6
+    },
+    {
+      "from": "Bill",
+      "to": "Queen",
+      "value": 5
+    },
+    {
+      "from": "Caterpillar",
+      "to": "Gryphon",
+      "value": 5
+    },
+    {
+      "from": "Queen",
+      "to": "Hatter",
+      "value": 38
+    },
+    {
+      "from": "Queen",
+      "to": "Five",
+      "value": 10
+    },
+    {
+      "from": "Queen",
+      "to": "Two",
+      "value": 20
+    },
+    {
+      "from": "Queen",
+      "to": "Gryphon",
+      "value": 32
+    },
+    {
+      "from": "Queen",
+      "to": "Dormouse",
+      "value": 18
+    },
+    {
+      "from": "Cat",
+      "to": "Hatter",
+      "value": 6
+    },
+    {
+      "from": "Hatter",
+      "to": "Dormouse",
+      "value": 125
+    },
+    {
+      "from": "Five",
+      "to": "Seven",
+      "value": 27
+    },
+    {
+      "from": "Seven",
+      "to": "Two",
+      "value": 12
+    },
+    {
+      "from": "Two",
+      "to": "Gryphon",
+      "value": 11
+    },
+    {
+      "from": "Gryphon",
+      "to": "Turtle",
+      "value": 4
+    }
+  ]
+}

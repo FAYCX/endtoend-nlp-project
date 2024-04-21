@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1000;
+                 background-color: #000;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#c1e1f5", "font": {"color": "white"}, "id": "Bennet", "label": "Bennet", "shape": "dot", "size": 11.3}, {"color": "#f2cee0", "font": {"color": "white"}, "id": "Bingley", "label": "Bingley", "shape": "dot", "size": 27.55}, {"color": "#7f47ad", "font": {"color": "white"}, "id": "William", "label": "William", "shape": "dot", "size": 3.7}, {"color": "#71bd62", "font": {"color": "white"}, "id": "Lady Lucas", "label": "Lady Lucas", "shape": "dot", "size": 1.68}, {"color": "#b89706", "font": {"color": "white"}, "id": "Jane", "label": "Jane", "shape": "dot", "size": 25.27}, {"color": "#094dad", "font": {"color": "white"}, "id": "Lydia", "label": "Lydia", "shape": "dot", "size": 13.64}, {"color": "#f5d5ea", "font": {"color": "white"}, "id": "Elizabeth", "label": "Elizabeth", "shape": "dot", "size": 52.39}, {"color": "#428036", "font": {"color": "white"}, "id": "Mrs Bennet", "label": "Mrs Bennet", "shape": "dot", "size": 14.57}, {"color": "#c1e1f5", "font": {"color": "white"}, "id": "Mary", "label": "Mary", "shape": "dot", "size": 2.94}, {"color": "#f2cee0", "font": {"color": "white"}, "id": "Hurst", "label": "Hurst", "shape": "dot", "size": 1.82}, {"color": "#7f47ad", "font": {"color": "white"}, "id": "Darcy", "label": "Darcy", "shape": "dot", "size": 34.87}, {"color": "#71bd62", "font": {"color": "white"}, "id": "Mrs Hurst", "label": "Mrs Hurst", "shape": "dot", "size": 1.86}, {"color": "#b89706", "font": {"color": "white"}, "id": "Lucas", "label": "Lucas", "shape": "dot", "size": 2.33}, {"color": "#094dad", "font": {"color": "white"}, "id": "Charlotte", "label": "Charlotte", "shape": "dot", "size": 7.45}, {"color": "#f5d5ea", "font": {"color": "white"}, "id": "Phillips", "label": "Phillips", "shape": "dot", "size": 2.06}, {"color": "#428036", "font": {"color": "white"}, "id": "Mrs Phillips", "label": "Mrs Phillips", "shape": "dot", "size": 1.37}, {"color": "#c1e1f5", "font": {"color": "white"}, "id": "Charles", "label": "Charles", "shape": "dot", "size": 0.63}, {"color": "#f2cee0", "font": {"color": "white"}, "id": "Caroline", "label": "Caroline", "shape": "dot", "size": 1.7}, {"color": "#7f47ad", "font": {"color": "white"}, "id": "Gardiner", "label": "Gardiner", "shape": "dot", "size": 5.13}, {"color": "#71bd62", "font": {"color": "white"}, "id": "Collins", "label": "Collins", "shape": "dot", "size": 15.08}, {"color": "#b89706", "font": {"color": "white"}, "id": "Lady Catherine", "label": "Lady Catherine", "shape": "dot", "size": 7.0}, {"color": "#094dad", "font": {"color": "white"}, "id": "Wickham", "label": "Wickham", "shape": "dot", "size": 16.04}, {"color": "#f5d5ea", "font": {"color": "white"}, "id": "Mrs Gardiner", "label": "Mrs Gardiner", "shape": "dot", "size": 4.8}, {"color": "#428036", "font": {"color": "white"}, "id": "Fitzwilliam", "label": "Fitzwilliam", "shape": "dot", "size": 3.41}, {"color": "#c1e1f5", "font": {"color": "white"}, "id": "Georgiana", "label": "Georgiana", "shape": "dot", "size": 1.34}, {"color": "#f2cee0", "font": {"color": "white"}, "id": "George", "label": "George", "shape": "dot", "size": 0.07}]);
+                  edges = new vis.DataSet([{"from": "Bennet", "to": "Bingley", "value": 121}, {"from": "Bennet", "to": "Lydia", "value": 99}, {"from": "Bennet", "to": "Elizabeth", "value": 208}, {"from": "Bennet", "to": "Mrs Bennet", "value": 127}, {"from": "Bennet", "to": "Jane", "value": 90}, {"from": "Bennet", "to": "Hurst", "value": 6}, {"from": "Bennet", "to": "Phillips", "value": 6}, {"from": "Bennet", "to": "William", "value": 18}, {"from": "Bennet", "to": "Collins", "value": 141}, {"from": "Bennet", "to": "Lady Catherine", "value": 59}, {"from": "Bennet", "to": "Darcy", "value": 87}, {"from": "Bennet", "to": "Lady Lucas", "value": 12}, {"from": "Bennet", "to": "Wickham", "value": 79}, {"from": "Bennet", "to": "Caroline", "value": 6}, {"from": "Bennet", "to": "Fitzwilliam", "value": 5}, {"from": "Bennet", "to": "Gardiner", "value": 47}, {"from": "Bennet", "to": "Mrs Gardiner", "value": 12}, {"from": "Bennet", "to": "Mrs Phillips", "value": 1}, {"from": "Bennet", "to": "Mary", "value": 6}, {"from": "Bingley", "to": "William", "value": 34}, {"from": "Bingley", "to": "Lady Lucas", "value": 23}, {"from": "Bingley", "to": "Jane", "value": 540}, {"from": "Bingley", "to": "Elizabeth", "value": 599}, {"from": "Bingley", "to": "Mrs Bennet", "value": 246}, {"from": "Bingley", "to": "Mary", "value": 18}, {"from": "Bingley", "to": "Lydia", "value": 55}, {"from": "Bingley", "to": "Hurst", "value": 54}, {"from": "Bingley", "to": "Darcy", "value": 703}, {"from": "Bingley", "to": "Mrs Hurst", "value": 104}, {"from": "Bingley", "to": "Lucas", "value": 20}, {"from": "Bingley", "to": "Charlotte", "value": 28}, {"from": "Bingley", "to": "Phillips", "value": 6}, {"from": "Bingley", "to": "Charles", "value": 17}, {"from": "Bingley", "to": "Caroline", "value": 39}, {"from": "Bingley", "to": "Collins", "value": 27}, {"from": "Bingley", "to": "Wickham", "value": 53}, {"from": "Bingley", "to": "Mrs Gardiner", "value": 23}, {"from": "Bingley", "to": "Lady Catherine", "value": 15}, {"from": "Bingley", "to": "Georgiana", "value": 12}, {"from": "Bingley", "to": "Gardiner", "value": 6}, {"from": "Bingley", "to": "Mrs Phillips", "value": 12}, {"from": "William", "to": "Lady Lucas", "value": 23}, {"from": "William", "to": "Darcy", "value": 51}, {"from": "William", "to": "Elizabeth", "value": 65}, {"from": "William", "to": "Lydia", "value": 11}, {"from": "William", "to": "Jane", "value": 12}, {"from": "William", "to": "Collins", "value": 98}, {"from": "William", "to": "Charlotte", "value": 24}, {"from": "William", "to": "Wickham", "value": 6}, {"from": "William", "to": "Gardiner", "value": 6}, {"from": "William", "to": "Lady Catherine", "value": 16}, {"from": "William", "to": "Phillips", "value": 6}, {"from": "Lady Lucas", "to": "Mrs Bennet", "value": 24}, {"from": "Lady Lucas", "to": "Charlotte", "value": 5}, {"from": "Lady Lucas", "to": "Jane", "value": 16}, {"from": "Lady Lucas", "to": "Elizabeth", "value": 30}, {"from": "Lady Lucas", "to": "Collins", "value": 24}, {"from": "Lady Lucas", "to": "Gardiner", "value": 5}, {"from": "Lady Lucas", "to": "Phillips", "value": 4}, {"from": "Lady Lucas", "to": "Lydia", "value": 2}, {"from": "Jane", "to": "Lydia", "value": 154}, {"from": "Jane", "to": "Elizabeth", "value": 736}, {"from": "Jane", "to": "Mary", "value": 22}, {"from": "Jane", "to": "Lucas", "value": 7}, {"from": "Jane", "to": "Hurst", "value": 8}, {"from": "Jane", "to": "Darcy", "value": 270}, {"from": "Jane", "to": "Charlotte", "value": 47}, {"from": "Jane", "to": "Mrs Bennet", "value": 187}, {"from": "Jane", "to": "Mrs Hurst", "value": 6}, {"from": "Jane", "to": "Gardiner", "value": 49}, {"from": "Jane", "to": "Lady Catherine", "value": 12}, {"from": "Jane", "to": "Collins", "value": 65}, {"from": "Jane", "to": "Phillips", "value": 20}, {"from": "Jane", "to": "Mrs Phillips", "value": 6}, {"from": "Jane", "to": "Wickham", "value": 181}, {"from": "Jane", "to": "Charles", "value": 12}, {"from": "Jane", "to": "Caroline", "value": 28}, {"from": "Jane", "to": "Mrs Gardiner", "value": 38}, {"from": "Jane", "to": "Fitzwilliam", "value": 21}, {"from": "Lydia", "to": "Phillips", "value": 18}, {"from": "Lydia", "to": "Mrs Phillips", "value": 24}, {"from": "Lydia", "to": "Mrs Bennet", "value": 164}, {"from": "Lydia", "to": "Mary", "value": 52}, {"from": "Lydia", "to": "Elizabeth", "value": 319}, {"from": "Lydia", "to": "Collins", "value": 68}, {"from": "Lydia", "to": "Wickham", "value": 223}, {"from": "Lydia", "to": "Darcy", "value": 82}, {"from": "Lydia", "to": "Charlotte", "value": 10}, {"from": "Lydia", "to": "Mrs Gardiner", "value": 35}, {"from": "Lydia", "to": "Gardiner", "value": 43}, {"from": "Lydia", "to": "Lady Catherine", "value": 5}, {"from": "Elizabeth", "to": "Darcy", "value": 1057}, {"from": "Elizabeth", "to": "Mrs Bennet", "value": 266}, {"from": "Elizabeth", "to": "Charlotte", "value": 246}, {"from": "Elizabeth", "to": "Lucas", "value": 36}, {"from": "Elizabeth", "to": "Mary", "value": 87}, {"from": "Elizabeth", "to": "Hurst", "value": 47}, {"from": "Elizabeth", "to": "Caroline", "value": 17}, {"from": "Elizabeth", "to": "Gardiner", "value": 143}, {"from": "Elizabeth", "to": "Mrs Hurst", "value": 30}, {"from": "Elizabeth", "to": "Phillips", "value": 19}, {"from": "Elizabeth", "to": "Collins", "value": 393}, {"from": "Elizabeth", "to": "Lady Catherine", "value": 238}, {"from": "Elizabeth", "to": "Wickham", "value": 379}, {"from": "Elizabeth", "to": "Mrs Phillips", "value": 6}, {"from": "Elizabeth", "to": "Mrs Gardiner", "value": 191}, {"from": "Elizabeth", "to": "Fitzwilliam", "value": 93}, {"from": "Elizabeth", "to": "Georgiana", "value": 34}, {"from": "Mrs Bennet", "to": "Mary", "value": 33}, {"from": "Mrs Bennet", "to": "Darcy", "value": 70}, {"from": "Mrs Bennet", "to": "Lucas", "value": 40}, {"from": "Mrs Bennet", "to": "Charlotte", "value": 23}, {"from": "Mrs Bennet", "to": "Mrs Hurst", "value": 17}, {"from": "Mrs Bennet", "to": "Collins", "value": 117}, {"from": "Mrs Bennet", "to": "Lady Catherine", "value": 28}, {"from": "Mrs Bennet", "to": "Phillips", "value": 6}, {"from": "Mrs Bennet", "to": "Wickham", "value": 47}, {"from": "Mrs Bennet", "to": "Gardiner", "value": 23}, {"from": "Mrs Bennet", "to": "Mrs Gardiner", "value": 18}, {"from": "Mrs Bennet", "to": "Mrs Phillips", "value": 12}, {"from": "Mrs Bennet", "to": "Caroline", "value": 6}, {"from": "Mrs Bennet", "to": "Georgiana", "value": 3}, {"from": "Mary", "to": "Darcy", "value": 23}, {"from": "Mary", "to": "Lady Catherine", "value": 5}, {"from": "Mary", "to": "Collins", "value": 12}, {"from": "Mary", "to": "Wickham", "value": 11}, {"from": "Mary", "to": "Lucas", "value": 6}, {"from": "Mary", "to": "George", "value": 7}, {"from": "Mary", "to": "Gardiner", "value": 6}, {"from": "Mary", "to": "Phillips", "value": 6}, {"from": "Hurst", "to": "Darcy", "value": 57}, {"from": "Hurst", "to": "Lucas", "value": 4}, {"from": "Hurst", "to": "Mrs Gardiner", "value": 6}, {"from": "Darcy", "to": "Mrs Hurst", "value": 23}, {"from": "Darcy", "to": "Charlotte", "value": 52}, {"from": "Darcy", "to": "Lucas", "value": 23}, {"from": "Darcy", "to": "Charles", "value": 28}, {"from": "Darcy", "to": "Caroline", "value": 56}, {"from": "Darcy", "to": "Phillips", "value": 16}, {"from": "Darcy", "to": "Wickham", "value": 349}, {"from": "Darcy", "to": "Collins", "value": 96}, {"from": "Darcy", "to": "Lady Catherine", "value": 79}, {"from": "Darcy", "to": "Mrs Gardiner", "value": 65}, {"from": "Darcy", "to": "Gardiner", "value": 64}, {"from": "Darcy", "to": "Fitzwilliam", "value": 176}, {"from": "Darcy", "to": "Georgiana", "value": 60}, {"from": "Mrs Hurst", "to": "Caroline", "value": 6}, {"from": "Lucas", "to": "Collins", "value": 45}, {"from": "Lucas", "to": "Charlotte", "value": 34}, {"from": "Lucas", "to": "Lady Catherine", "value": 12}, {"from": "Lucas", "to": "Gardiner", "value": 6}, {"from": "Charlotte", "to": "Wickham", "value": 6}, {"from": "Charlotte", "to": "Collins", "value": 202}, {"from": "Charlotte", "to": "Lady Catherine", "value": 62}, {"from": "Charlotte", "to": "Mrs Gardiner", "value": 6}, {"from": "Phillips", "to": "Mrs Phillips", "value": 28}, {"from": "Phillips", "to": "Collins", "value": 18}, {"from": "Phillips", "to": "Wickham", "value": 36}, {"from": "Phillips", "to": "Lady Catherine", "value": 17}, {"from": "Mrs Phillips", "to": "Wickham", "value": 24}, {"from": "Mrs Phillips", "to": "Collins", "value": 18}, {"from": "Mrs Phillips", "to": "Mrs Gardiner", "value": 6}, {"from": "Charles", "to": "Caroline", "value": 6}, {"from": "Caroline", "to": "Collins", "value": 6}, {"from": "Gardiner", "to": "Mrs Gardiner", "value": 33}, {"from": "Gardiner", "to": "Wickham", "value": 65}, {"from": "Gardiner", "to": "Georgiana", "value": 6}, {"from": "Gardiner", "to": "Collins", "value": 6}, {"from": "Gardiner", "to": "Lady Catherine", "value": 5}, {"from": "Collins", "to": "Lady Catherine", "value": 107}, {"from": "Collins", "to": "Wickham", "value": 47}, {"from": "Collins", "to": "Fitzwilliam", "value": 12}, {"from": "Collins", "to": "Mrs Gardiner", "value": 6}, {"from": "Lady Catherine", "to": "Wickham", "value": 23}, {"from": "Lady Catherine", "to": "Fitzwilliam", "value": 17}, {"from": "Wickham", "to": "Mrs Gardiner", "value": 41}, {"from": "Wickham", "to": "Fitzwilliam", "value": 16}, {"from": "Wickham", "to": "Georgiana", "value": 18}, {"from": "Fitzwilliam", "to": "Georgiana", "value": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "centralGravity": 0.001,
+            "gravitationalConstant": -15000,
+            "springConstant": 0.05,
+            "springLength": 300
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

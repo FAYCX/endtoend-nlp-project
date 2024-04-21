@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+.streamlit/
+.venv/
+venv/
+
+eval*
