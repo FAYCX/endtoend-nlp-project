@@ -8,7 +8,9 @@ print("Python executable:", sys.executable)
 # List installed packages
 subprocess.run(["pip", "list"])
 
-print(os.getcwd())
+
+print("Current working directory:", os.getcwd())
+print("Files in the current directory:", os.listdir())
 
 import streamlit as st
 
