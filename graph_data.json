@@ -1,0 +1,1057 @@
+{
+  "nodes": [
+    {
+      "id": "Bennet",
+      "label": "Bennet",
+      "color": "#c1e1f5",
+      "value": 1130
+    },
+    {
+      "id": "Bingley",
+      "label": "Bingley",
+      "color": "#f2cee0",
+      "value": 2755
+    },
+    {
+      "id": "William",
+      "label": "William",
+      "color": "#7f47ad",
+      "value": 370
+    },
+    {
+      "id": "Lady Lucas",
+      "label": "Lady Lucas",
+      "color": "#71bd62",
+      "value": 168
+    },
+    {
+      "id": "Jane",
+      "label": "Jane",
+      "color": "#b89706",
+      "value": 2527
+    },
+    {
+      "id": "Lydia",
+      "label": "Lydia",
+      "color": "#094dad",
+      "value": 1364
+    },
+    {
+      "id": "Elizabeth",
+      "label": "Elizabeth",
+      "color": "#f5d5ea",
+      "value": 5239
+    },
+    {
+      "id": "Mrs Bennet",
+      "label": "Mrs Bennet",
+      "color": "#428036",
+      "value": 1457
+    },
+    {
+      "id": "Mary",
+      "label": "Mary",
+      "color": "#c1e1f5",
+      "value": 294
+    },
+    {
+      "id": "Hurst",
+      "label": "Hurst",
+      "color": "#f2cee0",
+      "value": 182
+    },
+    {
+      "id": "Darcy",
+      "label": "Darcy",
+      "color": "#7f47ad",
+      "value": 3487
+    },
+    {
+      "id": "Mrs Hurst",
+      "label": "Mrs Hurst",
+      "color": "#71bd62",
+      "value": 186
+    },
+    {
+      "id": "Lucas",
+      "label": "Lucas",
+      "color": "#b89706",
+      "value": 233
+    },
+    {
+      "id": "Charlotte",
+      "label": "Charlotte",
+      "color": "#094dad",
+      "value": 745
+    },
+    {
+      "id": "Phillips",
+      "label": "Phillips",
+      "color": "#f5d5ea",
+      "value": 206
+    },
+    {
+      "id": "Mrs Phillips",
+      "label": "Mrs Phillips",
+      "color": "#428036",
+      "value": 137
+    },
+    {
+      "id": "Charles",
+      "label": "Charles",
+      "color": "#c1e1f5",
+      "value": 63
+    },
+    {
+      "id": "Caroline",
+      "label": "Caroline",
+      "color": "#f2cee0",
+      "value": 170
+    },
+    {
+      "id": "Gardiner",
+      "label": "Gardiner",
+      "color": "#7f47ad",
+      "value": 513
+    },
+    {
+      "id": "Collins",
+      "label": "Collins",
+      "color": "#71bd62",
+      "value": 1508
+    },
+    {
+      "id": "Lady Catherine",
+      "label": "Lady Catherine",
+      "color": "#b89706",
+      "value": 700
+    },
+    {
+      "id": "Wickham",
+      "label": "Wickham",
+      "color": "#094dad",
+      "value": 1604
+    },
+    {
+      "id": "Mrs Gardiner",
+      "label": "Mrs Gardiner",
+      "color": "#f5d5ea",
+      "value": 480
+    },
+    {
+      "id": "Fitzwilliam",
+      "label": "Fitzwilliam",
+      "color": "#428036",
+      "value": 341
+    },
+    {
+      "id": "Georgiana",
+      "label": "Georgiana",
+      "color": "#c1e1f5",
+      "value": 134
+    },
+    {
+      "id": "George",
+      "label": "George",
+      "color": "#f2cee0",
+      "value": 7
+    }
+  ],
+  "edges": [
+    {
+      "from": "Bennet",
+      "to": "Bingley",
+      "value": 121
+    },
+    {
+      "from": "Bennet",
+      "to": "Lydia",
+      "value": 99
+    },
+    {
+      "from": "Bennet",
+      "to": "Elizabeth",
+      "value": 208
+    },
+    {
+      "from": "Bennet",
+      "to": "Mrs Bennet",
+      "value": 127
+    },
+    {
+      "from": "Bennet",
+      "to": "Jane",
+      "value": 90
+    },
+    {
+      "from": "Bennet",
+      "to": "Hurst",
+      "value": 6
+    },
+    {
+      "from": "Bennet",
+      "to": "Phillips",
+      "value": 6
+    },
+    {
+      "from": "Bennet",
+      "to": "William",
+      "value": 18
+    },
+    {
+      "from": "Bennet",
+      "to": "Collins",
+      "value": 141
+    },
+    {
+      "from": "Bennet",
+      "to": "Lady Catherine",
+      "value": 59
+    },
+    {
+      "from": "Bennet",
+      "to": "Darcy",
+      "value": 87
+    },
+    {
+      "from": "Bennet",
+      "to": "Lady Lucas",
+      "value": 12
+    },
+    {
+      "from": "Bennet",
+      "to": "Wickham",
+      "value": 79
+    },
+    {
+      "from": "Bennet",
+      "to": "Caroline",
+      "value": 6
+    },
+    {
+      "from": "Bennet",
+      "to": "Fitzwilliam",
+      "value": 5
+    },
+    {
+      "from": "Bennet",
+      "to": "Gardiner",
+      "value": 47
+    },
+    {
+      "from": "Bennet",
+      "to": "Mrs Gardiner",
+      "value": 12
+    },
+    {
+      "from": "Bennet",
+      "to": "Mrs Phillips",
+      "value": 1
+    },
+    {
+      "from": "Bennet",
+      "to": "Mary",
+      "value": 6
+    },
+    {
+      "from": "Bingley",
+      "to": "William",
+      "value": 34
+    },
+    {
+      "from": "Bingley",
+      "to": "Lady Lucas",
+      "value": 23
+    },
+    {
+      "from": "Bingley",
+      "to": "Jane",
+      "value": 540
+    },
+    {
+      "from": "Bingley",
+      "to": "Elizabeth",
+      "value": 599
+    },
+    {
+      "from": "Bingley",
+      "to": "Mrs Bennet",
+      "value": 246
+    },
+    {
+      "from": "Bingley",
+      "to": "Mary",
+      "value": 18
+    },
+    {
+      "from": "Bingley",
+      "to": "Lydia",
+      "value": 55
+    },
+    {
+      "from": "Bingley",
+      "to": "Hurst",
+      "value": 54
+    },
+    {
+      "from": "Bingley",
+      "to": "Darcy",
+      "value": 703
+    },
+    {
+      "from": "Bingley",
+      "to": "Mrs Hurst",
+      "value": 104
+    },
+    {
+      "from": "Bingley",
+      "to": "Lucas",
+      "value": 20
+    },
+    {
+      "from": "Bingley",
+      "to": "Charlotte",
+      "value": 28
+    },
+    {
+      "from": "Bingley",
+      "to": "Phillips",
+      "value": 6
+    },
+    {
+      "from": "Bingley",
+      "to": "Charles",
+      "value": 17
+    },
+    {
+      "from": "Bingley",
+      "to": "Caroline",
+      "value": 39
+    },
+    {
+      "from": "Bingley",
+      "to": "Collins",
+      "value": 27
+    },
+    {
+      "from": "Bingley",
+      "to": "Wickham",
+      "value": 53
+    },
+    {
+      "from": "Bingley",
+      "to": "Mrs Gardiner",
+      "value": 23
+    },
+    {
+      "from": "Bingley",
+      "to": "Lady Catherine",
+      "value": 15
+    },
+    {
+      "from": "Bingley",
+      "to": "Georgiana",
+      "value": 12
+    },
+    {
+      "from": "Bingley",
+      "to": "Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Bingley",
+      "to": "Mrs Phillips",
+      "value": 12
+    },
+    {
+      "from": "William",
+      "to": "Lady Lucas",
+      "value": 23
+    },
+    {
+      "from": "William",
+      "to": "Darcy",
+      "value": 51
+    },
+    {
+      "from": "William",
+      "to": "Elizabeth",
+      "value": 65
+    },
+    {
+      "from": "William",
+      "to": "Lydia",
+      "value": 11
+    },
+    {
+      "from": "William",
+      "to": "Jane",
+      "value": 12
+    },
+    {
+      "from": "William",
+      "to": "Collins",
+      "value": 98
+    },
+    {
+      "from": "William",
+      "to": "Charlotte",
+      "value": 24
+    },
+    {
+      "from": "William",
+      "to": "Wickham",
+      "value": 6
+    },
+    {
+      "from": "William",
+      "to": "Gardiner",
+      "value": 6
+    },
+    {
+      "from": "William",
+      "to": "Lady Catherine",
+      "value": 16
+    },
+    {
+      "from": "William",
+      "to": "Phillips",
+      "value": 6
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Mrs Bennet",
+      "value": 24
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Charlotte",
+      "value": 5
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Jane",
+      "value": 16
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Elizabeth",
+      "value": 30
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Collins",
+      "value": 24
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Gardiner",
+      "value": 5
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Phillips",
+      "value": 4
+    },
+    {
+      "from": "Lady Lucas",
+      "to": "Lydia",
+      "value": 2
+    },
+    {
+      "from": "Jane",
+      "to": "Lydia",
+      "value": 154
+    },
+    {
+      "from": "Jane",
+      "to": "Elizabeth",
+      "value": 736
+    },
+    {
+      "from": "Jane",
+      "to": "Mary",
+      "value": 22
+    },
+    {
+      "from": "Jane",
+      "to": "Lucas",
+      "value": 7
+    },
+    {
+      "from": "Jane",
+      "to": "Hurst",
+      "value": 8
+    },
+    {
+      "from": "Jane",
+      "to": "Darcy",
+      "value": 270
+    },
+    {
+      "from": "Jane",
+      "to": "Charlotte",
+      "value": 47
+    },
+    {
+      "from": "Jane",
+      "to": "Mrs Bennet",
+      "value": 187
+    },
+    {
+      "from": "Jane",
+      "to": "Mrs Hurst",
+      "value": 6
+    },
+    {
+      "from": "Jane",
+      "to": "Gardiner",
+      "value": 49
+    },
+    {
+      "from": "Jane",
+      "to": "Lady Catherine",
+      "value": 12
+    },
+    {
+      "from": "Jane",
+      "to": "Collins",
+      "value": 65
+    },
+    {
+      "from": "Jane",
+      "to": "Phillips",
+      "value": 20
+    },
+    {
+      "from": "Jane",
+      "to": "Mrs Phillips",
+      "value": 6
+    },
+    {
+      "from": "Jane",
+      "to": "Wickham",
+      "value": 181
+    },
+    {
+      "from": "Jane",
+      "to": "Charles",
+      "value": 12
+    },
+    {
+      "from": "Jane",
+      "to": "Caroline",
+      "value": 28
+    },
+    {
+      "from": "Jane",
+      "to": "Mrs Gardiner",
+      "value": 38
+    },
+    {
+      "from": "Jane",
+      "to": "Fitzwilliam",
+      "value": 21
+    },
+    {
+      "from": "Lydia",
+      "to": "Phillips",
+      "value": 18
+    },
+    {
+      "from": "Lydia",
+      "to": "Mrs Phillips",
+      "value": 24
+    },
+    {
+      "from": "Lydia",
+      "to": "Mrs Bennet",
+      "value": 164
+    },
+    {
+      "from": "Lydia",
+      "to": "Mary",
+      "value": 52
+    },
+    {
+      "from": "Lydia",
+      "to": "Elizabeth",
+      "value": 319
+    },
+    {
+      "from": "Lydia",
+      "to": "Collins",
+      "value": 68
+    },
+    {
+      "from": "Lydia",
+      "to": "Wickham",
+      "value": 223
+    },
+    {
+      "from": "Lydia",
+      "to": "Darcy",
+      "value": 82
+    },
+    {
+      "from": "Lydia",
+      "to": "Charlotte",
+      "value": 10
+    },
+    {
+      "from": "Lydia",
+      "to": "Mrs Gardiner",
+      "value": 35
+    },
+    {
+      "from": "Lydia",
+      "to": "Gardiner",
+      "value": 43
+    },
+    {
+      "from": "Lydia",
+      "to": "Lady Catherine",
+      "value": 5
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Darcy",
+      "value": 1057
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Mrs Bennet",
+      "value": 266
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Charlotte",
+      "value": 246
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Lucas",
+      "value": 36
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Mary",
+      "value": 87
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Hurst",
+      "value": 47
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Caroline",
+      "value": 17
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Gardiner",
+      "value": 143
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Mrs Hurst",
+      "value": 30
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Phillips",
+      "value": 19
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Collins",
+      "value": 393
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Lady Catherine",
+      "value": 238
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Wickham",
+      "value": 379
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Mrs Phillips",
+      "value": 6
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Mrs Gardiner",
+      "value": 191
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Fitzwilliam",
+      "value": 93
+    },
+    {
+      "from": "Elizabeth",
+      "to": "Georgiana",
+      "value": 34
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Mary",
+      "value": 33
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Darcy",
+      "value": 70
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Lucas",
+      "value": 40
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Charlotte",
+      "value": 23
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Mrs Hurst",
+      "value": 17
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Collins",
+      "value": 117
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Lady Catherine",
+      "value": 28
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Phillips",
+      "value": 6
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Wickham",
+      "value": 47
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Gardiner",
+      "value": 23
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Mrs Gardiner",
+      "value": 18
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Mrs Phillips",
+      "value": 12
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Caroline",
+      "value": 6
+    },
+    {
+      "from": "Mrs Bennet",
+      "to": "Georgiana",
+      "value": 3
+    },
+    {
+      "from": "Mary",
+      "to": "Darcy",
+      "value": 23
+    },
+    {
+      "from": "Mary",
+      "to": "Lady Catherine",
+      "value": 5
+    },
+    {
+      "from": "Mary",
+      "to": "Collins",
+      "value": 12
+    },
+    {
+      "from": "Mary",
+      "to": "Wickham",
+      "value": 11
+    },
+    {
+      "from": "Mary",
+      "to": "Lucas",
+      "value": 6
+    },
+    {
+      "from": "Mary",
+      "to": "George",
+      "value": 7
+    },
+    {
+      "from": "Mary",
+      "to": "Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Mary",
+      "to": "Phillips",
+      "value": 6
+    },
+    {
+      "from": "Hurst",
+      "to": "Darcy",
+      "value": 57
+    },
+    {
+      "from": "Hurst",
+      "to": "Lucas",
+      "value": 4
+    },
+    {
+      "from": "Hurst",
+      "to": "Mrs Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Darcy",
+      "to": "Mrs Hurst",
+      "value": 23
+    },
+    {
+      "from": "Darcy",
+      "to": "Charlotte",
+      "value": 52
+    },
+    {
+      "from": "Darcy",
+      "to": "Lucas",
+      "value": 23
+    },
+    {
+      "from": "Darcy",
+      "to": "Charles",
+      "value": 28
+    },
+    {
+      "from": "Darcy",
+      "to": "Caroline",
+      "value": 56
+    },
+    {
+      "from": "Darcy",
+      "to": "Phillips",
+      "value": 16
+    },
+    {
+      "from": "Darcy",
+      "to": "Wickham",
+      "value": 349
+    },
+    {
+      "from": "Darcy",
+      "to": "Collins",
+      "value": 96
+    },
+    {
+      "from": "Darcy",
+      "to": "Lady Catherine",
+      "value": 79
+    },
+    {
+      "from": "Darcy",
+      "to": "Mrs Gardiner",
+      "value": 65
+    },
+    {
+      "from": "Darcy",
+      "to": "Gardiner",
+      "value": 64
+    },
+    {
+      "from": "Darcy",
+      "to": "Fitzwilliam",
+      "value": 176
+    },
+    {
+      "from": "Darcy",
+      "to": "Georgiana",
+      "value": 60
+    },
+    {
+      "from": "Mrs Hurst",
+      "to": "Caroline",
+      "value": 6
+    },
+    {
+      "from": "Lucas",
+      "to": "Collins",
+      "value": 45
+    },
+    {
+      "from": "Lucas",
+      "to": "Charlotte",
+      "value": 34
+    },
+    {
+      "from": "Lucas",
+      "to": "Lady Catherine",
+      "value": 12
+    },
+    {
+      "from": "Lucas",
+      "to": "Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Charlotte",
+      "to": "Wickham",
+      "value": 6
+    },
+    {
+      "from": "Charlotte",
+      "to": "Collins",
+      "value": 202
+    },
+    {
+      "from": "Charlotte",
+      "to": "Lady Catherine",
+      "value": 62
+    },
+    {
+      "from": "Charlotte",
+      "to": "Mrs Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Phillips",
+      "to": "Mrs Phillips",
+      "value": 28
+    },
+    {
+      "from": "Phillips",
+      "to": "Collins",
+      "value": 18
+    },
+    {
+      "from": "Phillips",
+      "to": "Wickham",
+      "value": 36
+    },
+    {
+      "from": "Phillips",
+      "to": "Lady Catherine",
+      "value": 17
+    },
+    {
+      "from": "Mrs Phillips",
+      "to": "Wickham",
+      "value": 24
+    },
+    {
+      "from": "Mrs Phillips",
+      "to": "Collins",
+      "value": 18
+    },
+    {
+      "from": "Mrs Phillips",
+      "to": "Mrs Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Charles",
+      "to": "Caroline",
+      "value": 6
+    },
+    {
+      "from": "Caroline",
+      "to": "Collins",
+      "value": 6
+    },
+    {
+      "from": "Gardiner",
+      "to": "Mrs Gardiner",
+      "value": 33
+    },
+    {
+      "from": "Gardiner",
+      "to": "Wickham",
+      "value": 65
+    },
+    {
+      "from": "Gardiner",
+      "to": "Georgiana",
+      "value": 6
+    },
+    {
+      "from": "Gardiner",
+      "to": "Collins",
+      "value": 6
+    },
+    {
+      "from": "Gardiner",
+      "to": "Lady Catherine",
+      "value": 5
+    },
+    {
+      "from": "Collins",
+      "to": "Lady Catherine",
+      "value": 107
+    },
+    {
+      "from": "Collins",
+      "to": "Wickham",
+      "value": 47
+    },
+    {
+      "from": "Collins",
+      "to": "Fitzwilliam",
+      "value": 12
+    },
+    {
+      "from": "Collins",
+      "to": "Mrs Gardiner",
+      "value": 6
+    },
+    {
+      "from": "Lady Catherine",
+      "to": "Wickham",
+      "value": 23
+    },
+    {
+      "from": "Lady Catherine",
+      "to": "Fitzwilliam",
+      "value": 17
+    },
+    {
+      "from": "Wickham",
+      "to": "Mrs Gardiner",
+      "value": 41
+    },
+    {
+      "from": "Wickham",
+      "to": "Fitzwilliam",
+      "value": 16
+    },
+    {
+      "from": "Wickham",
+      "to": "Georgiana",
+      "value": 18
+    },
+    {
+      "from": "Fitzwilliam",
+      "to": "Georgiana",
+      "value": 1
+    }
+  ]
+}
