@@ -2,7 +2,7 @@ node_modules/
 .DS_Store
 .ipynb_checkpoints/
 __pycache__/
-.streamlit/
+#.streamlit/
 .venv/
 venv/
 new-env/
