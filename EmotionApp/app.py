@@ -39,14 +39,9 @@ from itertools import cycle
 
 from poem import generate_text, app
 
-#alt.themes.enable("dark")
+alt.themes.enable("dark")
 
-# Read the CSS file
-with open('style.css', 'r') as f:
-    css = f.read()
 
-# Embed the CSS in the Streamlit app
-st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
