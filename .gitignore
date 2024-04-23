@@ -17,8 +17,7 @@ node_modules/
 # Python bytecode
 __pycache__/
 
-# Streamlit files
-.streamlit/
+
 
 # Evaluation files (be more specific if possible)
 eval*

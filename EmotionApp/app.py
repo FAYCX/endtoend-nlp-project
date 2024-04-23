@@ -41,9 +41,6 @@ from poem import generate_text, app
 
 #alt.themes.enable("dark")
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
 st.markdown('<style>div.block-container{padding-top:0.5rem;}</style>',unsafe_allow_html=True)
 
 white_color = "#fff"
