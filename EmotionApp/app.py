@@ -39,9 +39,10 @@ from itertools import cycle
 
 from poem import generate_text, app
 
-alt.themes.enable("dark")
+#alt.themes.enable("dark")
 
-
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
