@@ -3,14 +3,14 @@ import subprocess
 import os
 
 # Print Python executable path
-print("Python executable:", sys.executable)
+#print("Python executable:", sys.executable)
 
 # List installed packages
-subprocess.run(["pip", "list"])
+#subprocess.run(["pip", "list"])
 
 
-print("Current working directory:", os.getcwd())
-print("Files in the current directory:", os.listdir())
+#print("Current working directory:", os.getcwd())
+#print("Files in the current directory:", os.listdir())
 
 import streamlit as st
 
@@ -39,7 +39,14 @@ from itertools import cycle
 
 from poem import generate_text, app
 
-alt.themes.enable("dark")
+#alt.themes.enable("dark")
+
+# Read the CSS file
+with open('style.css', 'r') as f:
+    css = f.read()
+
+# Embed the CSS in the Streamlit app
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
 
