@@ -6,7 +6,7 @@ import os
 # This is for pride and prejudice character relationship
 
 # Path to JSON data
-json_file_path = '/Users/FayeTsai/endtoend-nlp-project/EmotionApp/graph_data.json'  
+json_file_path = 'graph_data.json'  
 
 # Read the JSON graph data
 with open(json_file_path, 'r') as json_file:
@@ -39,7 +39,7 @@ html_content = f"""
             padding: 0;
             margin: 0;
         }}
-        
+
     </style>
 </head>
 <body>
