@@ -44,12 +44,12 @@ from poem import generate_text, app
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-st.markdown('<style>div.block-container{padding-top:1rem;}</style>',unsafe_allow_html=True)
+st.markdown('<style>div.block-container{padding-top:0.5rem;}</style>',unsafe_allow_html=True)
 
 white_color = "#fff"
-h1 = "1.9rem"
-h2 = "1.6rem" 
-h3 = "1.2rem" 
+h1 = "1.8rem"
+h2 = "1.5rem" 
+h3 = "1.1rem" 
 p = "1rem"
 
 font_css = f"""
@@ -209,20 +209,24 @@ emotions_emoji_dict = {"anger": "😤", "disgust": "🤢", "fear": "😨", "joy"
 
 # Sidebar
 with st.sidebar:
-    st.header("Explore the Distant Reading Journey with AI")
-    
+    st.header('Explore the Distant Reading Journey with AI "mind"')
+
+    st.sidebar.write('''
+        ---
+        Created with ❤ by [Fay Cai](https://www.faycai.com)
+        ''')
+
+    st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
     explore = ["Social Network Visualization", "Sentiment Analyzer", "Generate Your Own", "AI Vision"]
 
-    net = ["Pride and Prejudice", "Facebook Social Net", "Alice's Adventures in Wonderland"]
+    net = ["Pride and Prejudice", "Facebook Social Network", "Alice's Adventures in Wonderland"]
 
     create = ["Your Social Graph", "Your Own Story"]
 
 
     choice = st.sidebar.selectbox("Explore", explore)
-    st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
 
     #create_choice = st.sidebar.selectbox("Generate", create)
-
 
 
 
@@ -268,7 +272,7 @@ def main():
 
             social_network()
 
-        if choice == "Social Network Visualization" and net_choice == "Facebook Social Net":
+        if choice == "Social Network Visualization" and net_choice == "Facebook Social Network":
 
             st.title("Facebook Social Network Visualization")
             facebook_network()
