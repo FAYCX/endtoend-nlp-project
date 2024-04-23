@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 #AI vision page
 
 
-#@st.cache_data
+@st.cache_data
 def load_data():
     NER = spacy.load('en_core_web_md')
     with open('pride.txt', 'r', encoding='utf8') as rf:
