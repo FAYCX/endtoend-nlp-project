@@ -1,5 +1,6 @@
 import sys
 import subprocess
+import os
 
 # Print Python executable path
 print("Python executable:", sys.executable)
@@ -7,7 +8,7 @@ print("Python executable:", sys.executable)
 # List installed packages
 subprocess.run(["pip", "list"])
 
-
+print(os.getcwd())
 
 import streamlit as st
 
