@@ -6,6 +6,8 @@ import tempfile
 from itertools import cycle
 import base64
 
+#generate your own page
+
 html_content = f"""
 <!DOCTYPE html>
 <html>

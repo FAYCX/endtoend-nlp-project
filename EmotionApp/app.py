@@ -265,7 +265,7 @@ def main():
         net_choice = st.sidebar.selectbox("Choose dataset", net)
 
         if choice == "Social Network Visualization" and net_choice == "Pride and Prejudice":
-            st.title("<Pride and Prejudice> Social Architecture")
+            st.title("'Pride and Prejudice' Social Architecture")
 
             social_network()
 
