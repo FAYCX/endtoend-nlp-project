@@ -61,7 +61,6 @@ html_content = f"""
     </style>
 </head>
 <body>
-<h1 style="color: #fff;">'Alice's Adventure in Wonderland' Network</h1>
 <div id="mynetwork"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {{

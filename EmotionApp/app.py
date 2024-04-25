@@ -275,6 +275,7 @@ def main():
             facebook_network()
 
         if choice == "Social Network Visualization" and net_choice == "Alice's Adventures in Wonderland":
+            st.title("'Alice's Adventures in Wonderland' network")
             alice_network()
 
 
