@@ -124,11 +124,12 @@ def app():
         st.error('Please use the left sidebar to set the parameters. Your selected genre, characters, and setting elements will actively shapes the course of the story.')
 
     st.title("Welcome to the Electronic Story Generator!")
+    st.subheader("Where GPT-2 Meets the Traditional Rule-based Coding")
 
     for _ in range(5):
             st.write("")
 
-    st.write("Dive into the world of bespoke storytelling with our generator, crafted in two distinct parts. First two-thirds of each narrative is meticulously shaped using a tracery-like grammar structure personally curated by me, weaving elements like real book titles, presidential quotes, and celebrity names into the fabric of the storytelling. The remaining third leverages the power of the GPT-2 model to generate the rest, based on the clues from the prompt we collaboratively create in the initial sentences. Each narrative unfolds uniquely based on your input, providing a tailored experience that ignites the imagination and curiosity, fostering innovative storytelling through electronic text and the mathematical algorithms within the AI mind.")
+    st.write("Dive into the world of bespoke storytelling with our generator, crafted in two distinct parts. The first `two-thirds` of each narrative is meticulously shaped using a tracery-like grammar with a rule-based structure that I've coded. It randomly weaves elements like real-world book titles, presidential quotes, and celebrity names into the fabric of the story. The `remaining third` leverages the power of the GPT-2 model to generate the rest based on the clues provided in the initial sentences. Each narrative unfolds uniquely based on the input, tailoring an experience that invites us collectivly to re-examine human and AI mind, fostering innovative storytelling through the combination of electronic text and the mathematical algorithms within the AI language model.")
 
 
     if st.sidebar.button("Generate Story"):
@@ -137,7 +138,7 @@ def app():
 
 
 def create_story(genre, main_character, secondary_character, setting, story_length, temperature):
-    
+
     # Random selections for story elements
     Begin = random.choice(Beginning)
     keywords = random.sample(genre_keywords[genre], 2)

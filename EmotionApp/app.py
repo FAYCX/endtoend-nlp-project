@@ -47,7 +47,7 @@ white_color = "#fff"
 h1 = "1.8rem"
 h2 = "1.5rem" 
 h3 = "1.1rem" 
-p = "1rem"
+p = "0.9rem"
 
 font_css = f"""
 <style>
@@ -213,7 +213,7 @@ with st.sidebar:
         Created with ❤ by [Fay Cai](https://www.faycai.com)
         ''')
 
-    st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
+    #st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
     explore = ["Social Network Visualization", "Sentiment Analyzer", "Generate Your Own", "AI Vision"]
 
     net = ["Pride and Prejudice", "Facebook Social Network", "Alice's Adventures in Wonderland"]
@@ -264,6 +264,15 @@ def main():
     if choice == "Social Network Visualization":
         net_choice = st.sidebar.selectbox("Choose dataset", net)
 
+        st.sidebar.write('''
+        ---
+        This social circle visualizations of the datasets in `books and facebook social net` are all generated using natural language processing (NLP) and semantic network techniques. Employing preprogrammed statistical algorithms and NLP entity recognition, the model can analyze the complex social relationships among characters throughout the entire book in under 30 seconds.
+        ''')
+
+        st.sidebar.write('''
+        To better understand the algorithm, please check the `generate your own graph` section on this APP. For more information about the data source and technical procedures, please refer to the project documentation here:  [The Mosaic Mind of AI](https://www.faycai.com/data-science/the-mosaic-mind-of-ai-app)
+        ''')
+
         if choice == "Social Network Visualization" and net_choice == "Pride and Prejudice":
             st.title("'Pride and Prejudice' Social Architecture")
 
@@ -285,6 +294,12 @@ def main():
     elif choice == "Sentiment Analyzer":
         st.title("Sentiment Analyzer Bot")
         st.write("🤖:'Trying my best to understand human emotion'")
+
+        #annotation
+        st.sidebar.write('''
+        ---
+        This emotion analyzer ML model is trained on `2 MB of real user-generated posts on Twitter platform`, using `logistic regression` algorithms. The model achieves an overall accuracy of 0.8, however, after multiple tests, we found the model exhibits `strong biases`: for instance, the word 'queen' and 'woman' as categorized as joy, while 'man' and 'king' are associated with anger and sadness. This highlights a significant bias presented in the selected posts from the Twitter platform. For more info, please check: [The Mosaic Mind of AI](https://www.faycai.com/data-science/the-mosaic-mind-of-ai-app)
+        ''')
 
         for _ in range(3):
             st.write("")
@@ -323,6 +338,14 @@ def main():
 
 
     elif choice == "AI Vision":
+
+
+        #annotation
+        st.sidebar.write('''
+        ---
+        This page utilizes NLP concepts with the `spaCy Entity Recognition` function, which enables the system to classify various entities such as names of people and places. You can find [a full list of entity types here](https://spacy.io/usage/linguistic-features#named-entities). Additionally, the spaCy parser allows the system to identify parts of speech, including `verbs`, `adjectives`, and `adverbs`. These linguistic features help enrich our data preprocessing, enhancing the foundational data quality for training more complex models like Large Language Models (LLMs). For more info, please check: [The Mosaic Mind of AI](https://www.faycai.com/data-science/the-mosaic-mind-of-ai-app)
+        ''')
+
 
         NER, chapters, text = load_data()
 

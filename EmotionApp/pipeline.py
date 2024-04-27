@@ -92,7 +92,7 @@ def main_pipe():
             st.write("")
 
 
-        st.write("Important Notice: Your data will be discarded immediately once you leave this page. To keep a copy of your graph, please make sure to download it once it's been generated.")
+        st.write("`Important Notice`: Your data will be discarded immediately once you leave this page. To keep a copy of your graph, please make sure to download it once it's been generated.")
 
 
         return  # Exit the function if no interactions
@@ -107,7 +107,7 @@ def get_image_as_base64(filename):
 
 
 def create_graph():
-    # Assuming collect_interactions() is being called elsewhere and session state is already populated
+   
 
     st.markdown('<div style="height: 80px;"></div>', unsafe_allow_html=True)
     
