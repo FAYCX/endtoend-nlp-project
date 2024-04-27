@@ -61,6 +61,7 @@ html_content = f"""
     </style>
 </head>
 <body>
+<h1 style="color: #fff;"></h1>
 <div id="mynetwork"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {{
@@ -75,11 +76,11 @@ html_content = f"""
         shape: 'dot',
         scaling: {{
             min: 10,    // Minimum size of nodes
-            max: 800,    // Maximum size of nodes
+            max: 500,    // Maximum size of nodes
             label: {{
                 enabled: true,
                 min: 10,
-                max: 500,
+                max: 200,
                 maxVisible: 100,
                 drawThreshold: 50
             }},

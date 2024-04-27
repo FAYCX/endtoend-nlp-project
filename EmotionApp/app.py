@@ -347,9 +347,9 @@ def main():
         ''')
 
 
-        NER, chapters, text = load_data()
+        NER, text = load_data()
 
-        read_AI(NER, chapters, text)
+        read_AI(NER, text)
 
 
 
