@@ -183,7 +183,7 @@ def create_graph():
         data=download_button_html,
         file_name="interactive_graph.html",
         mime="text/html"
-    )     
+    ) 
 
         # Display the graph in Streamlit
     st.components.v1.html(html_content, height=800)

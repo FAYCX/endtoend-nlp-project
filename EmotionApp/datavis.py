@@ -58,7 +58,7 @@ NER, text = load_data()
 # Function to display NER visualization
 def read_AI(NER, text):
     st.title("Read 'Pride and Prejudice' in AI Vision")
-    st.write("##### Named Entity Recognition in Natural Language Processing(NLP)")
+    st.write("##### Named Entity Recognition in Natural Language Processing (NLP)")
     for _ in range(2):  # You can adjust the range for more or less space
         st.write("")  
 

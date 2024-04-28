@@ -218,7 +218,7 @@ with st.sidebar:
 
     net = ["Pride and Prejudice", "Facebook Social Network", "Alice's Adventures in Wonderland"]
 
-    create = ["Your Social Graph", "Your Own Story"]
+    create = ["Social Graph", "Digital Story"]
 
 
     choice = st.sidebar.selectbox("Explore", explore)
@@ -356,14 +356,14 @@ def main():
     elif choice == "Generate Your Own":
         create_choice = st.sidebar.selectbox("Choose type", create)
 
-        if choice == "Generate Your Own" and create_choice == "Your Social Graph":
+        if choice == "Generate Your Own" and create_choice == "Social Graph":
 
             collect_interactions()
             display_interactions()
 
             main_pipe()
 
-        elif choice == "Generate Your Own" and create_choice == "Your Own Story":
+        elif choice == "Generate Your Own" and create_choice == "Digital Story":
 
             app()
             

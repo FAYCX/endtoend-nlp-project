@@ -54,7 +54,7 @@ genre_keywords = {
 character_traits = {
     "personality": [
         "curious and brave",
-        "sweet and lovely"
+        "sweet and lovely",
         "lovely and gentle",
         "witty and sarcastic",
         "kind and thoughtful",
@@ -105,6 +105,14 @@ character_traits = {
     ]
 }
 
+genre_words = {
+
+    "Fantasy": ["magical", "enchanted", "serenely", "mystical"],
+    "Horror": ["deadly", "scary", "ghastly", "haunting"],
+    "Romantic": ["beautiful", "lovely", "romantic", "sweetly"]
+}
+
+
 
 
 def app():
@@ -141,7 +149,10 @@ def create_story(genre, main_character, secondary_character, setting, story_leng
 
     # Random selections for story elements
     Begin = random.choice(Beginning)
+
     keywords = random.sample(genre_keywords[genre], 2)
+
+    words = random.sample(genre_words[genre],2)
 
     selected_personality = random.choice(character_traits["personality"])
     selected_occupation = random.choice(character_traits["occupation"])
@@ -157,13 +168,13 @@ def create_story(genre, main_character, secondary_character, setting, story_leng
 
     # Generate the prompt
     prompt = f"""
-{Begin}, {main_character}, a {selected_personality} {selected_occupation}, settled into a quiet nook with the book, '{selected_book}', at the most enchanting {setting} in town. 
+{Begin}, {main_character}, a {selected_personality} {selected_occupation}, settled into a quiet nook with the book, '{selected_book}', at the most {words[0]} {setting} in town. 
 Next to her, {secondary_character}, a {selected_personality2} {selected_occupation2}, was engrossed in '{selected_book2}' at the neighboring nook. 
 Suddenly, a distinct voice in the distance began reciting "{selected_quote}". 
 "Could that possibly be the President {selected_name}?" {main_character} mused, her gaze still fixed on her page. 
 As the voice drew nearer, {main_character} finally looked up to see none other than {selected_celebrities} approaching! 
 This story is all about {keywords[0]} and {keywords[1]}. 
-Why was {selected_celebrities} there, and what adventures await in this magical {setting}?
+Why was {selected_celebrities} there, and what adventures await in this {words[1]} {setting}?
 """
 
 
